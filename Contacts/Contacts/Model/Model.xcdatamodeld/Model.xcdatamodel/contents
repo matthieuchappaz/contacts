@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11232" systemVersion="16A323" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Pays" representedClassName=".Pays" syncable="YES">
+        <attribute name="gentile" attributeType="String" syncable="YES"/>
+        <attribute name="nom" attributeType="String" syncable="YES"/>
+        <relationship name="personne" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Personne" inverseName="pays" inverseEntity="Personne" syncable="YES"/>
+    </entity>
+    <entity name="Personne" representedClassName=".Personne" syncable="YES">
+        <attribute name="dateNaissance" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="imageProfil" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="nom" attributeType="String" syncable="YES"/>
+        <attribute name="prenom1" attributeType="String" syncable="YES"/>
+        <attribute name="prenom2" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="prenom3" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="pays" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Pays" inverseName="personne" inverseEntity="Pays" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Pays" positionX="205" positionY="-45" width="128" height="88"/>
+        <element name="Personne" positionX="-63" positionY="-18" width="128" height="150"/>
+    </elements>
+</model>
