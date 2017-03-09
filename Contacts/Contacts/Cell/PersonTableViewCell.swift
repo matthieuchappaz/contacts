@@ -13,6 +13,7 @@ class PersonTableViewCell: UITableViewCell {
     @IBOutlet weak var patronymeLabel: UILabel!
     @IBOutlet weak var autresPrenomsLabel: UILabel!
     @IBOutlet weak var dateNaissanceLabel: UILabel!
+    @IBOutlet weak var personImg: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

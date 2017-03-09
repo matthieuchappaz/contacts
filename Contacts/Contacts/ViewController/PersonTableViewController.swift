@@ -31,6 +31,9 @@ class PersonTableViewController: UIViewController, UITableViewDataSource, UITabl
         super.viewDidLoad()
         
         self.title = "Personnes"
+        
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 300
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -55,6 +58,10 @@ class PersonTableViewController: UIViewController, UITableViewDataSource, UITabl
         return self.personnes.count;
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension;
+    }
+    
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         //1. Récupérer une cellule prototype via mécanise de recylcage
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellIdentifier", for: indexPath) as! PersonTableViewCell;
@@ -65,9 +72,9 @@ class PersonTableViewController: UIViewController, UITableViewDataSource, UITabl
         cell.patronymeLabel.text = self.personnes[indexPath.row].patronyme;
         cell.autresPrenomsLabel.text = self.personnes[indexPath.row].autresPrenoms;
         cell.dateNaissanceLabel.text = self.personnes[indexPath.row].formattedDate;
-        cell.imageView?.image = UIImage(data: self.personnes[indexPath.row].imageProfil as! Data)
-        cell.imageView?.contentMode = UIViewContentMode.center
-        cell.imageView?.contentMode = UIViewContentMode.scaleAspectFit
+        cell.personImg?.image = UIImage(data: self.personnes[indexPath.row].imageProfil as! Data)
+//        cell.imageView?.contentMode = UIViewContentMode.center
+//        cell.imageView?.contentMode = UIViewContentMode.scaleAspectFit
 
         //        let aspect = (cell.imageView?.image?.size.width)! / (cell.imageView?.image?.size.height)!
 //        

@@ -22,6 +22,9 @@ class PersonneDetailTableViewController: UIViewController, UITableViewDataSource
     //MARK: - Functions
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 300
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -44,6 +47,10 @@ class PersonneDetailTableViewController: UIViewController, UITableViewDataSource
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1;
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension;
     }
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
